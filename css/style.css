@@ -864,7 +864,7 @@ p {
   background-color: var(--third-text-color);
 }
 
-.modal-btn {
+.modal__close {
   position: absolute;
   display: flex;
   background: transparent;
@@ -883,6 +883,17 @@ p {
 
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
+}
+
+.modal__close:hover,
+.modal__close:focus,
+.modal__close:active {
+  fill: var(--project-color);
 }
 
 .modal__title {
@@ -912,6 +923,16 @@ p {
 
   margin-bottom: 10px;
 }
+
+.modal__form--input:hover,
+.modal__form--input:active,
+.modal__form--input:focus,
+.modal__form--input:hover + .modal__form--icon,
+.modal__form--input:focus + .modal__form--icon,
+.modal__form--input:active + .modal__form--icon {
+  fill: var(--project-color);
+  border-color: var(--project-color);
+}
 .modal__form--input {
   display: inline-block;
   width: 100%;
@@ -931,12 +952,6 @@ p {
   transition-delay: 0ms;
 }
 
-.modal__form--input:hover,
-.modal__form--input:focus,
-.modal__form--input:active {
-  border-color: var(--project-color);
-  fill: var(--project-color);
-}
 .modal__form--icon {
   position: absolute;
 
@@ -955,12 +970,6 @@ p {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0ms;
-}
-
-.modal__form--icon:hover,
-.modal__form--icon:focus,
-.modal__form--icon:active {
-  fill: var(--project-color);
 }
 
 .modal__form--textarea {
